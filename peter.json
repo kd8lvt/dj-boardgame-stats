@@ -1,0 +1,115 @@
+{
+  "rolls": [
+    6,2,1,2,5,6,5,5,5,5,6,3,2,4,5,2,1,4,7,4,4,6,1,4,2,3,0,0,4,2,5,1,1,5
+  ],
+  "battles": [
+    {
+      "against": "roxanne",
+      "playerBP": 2,
+      "opponentBP": 6,
+      "win": true
+    },
+    {
+      "against": "roxanne",
+      "playerBP": 5,
+      "opponentBP": 6,
+      "win": true
+    },
+    {
+      "against": "winnona",
+      "playerBP": 11,
+      "opponentBP": 16,
+      "win": false
+    },
+    {
+      "against": "wallace",
+      "playerBP": 5,
+      "opponentBP": 9,
+      "win": true
+    },
+    {
+      "against": "wallace",
+      "playerBP": 10,
+      "opponentBP": 9,
+      "win": false
+    },
+    {
+      "against": "winnona",
+      "playerBP": 5.5,
+      "opponentBP": 8,
+      "win": false
+    },
+    {
+      "against": "brawly",
+      "playerBP": 5.5,
+      "opponentBP": 7,
+      "win": true
+    },
+    {
+      "against": "winnona",
+      "playerBP": 20,
+      "opponentBP": 8,
+      "win": true
+    },
+    {
+      "against": "flygon",
+      "playerBP": 20,
+      "opponentBP": 6.5,
+      "win": true
+    },
+    {
+      "against": "flannery",
+      "playerBP": 16,
+      "opponentBP": 7,
+      "win": true
+    },
+    {
+      "against": "norman",
+      "playerBP": 10,
+      "opponentBP": 8,
+      "win": true
+    },
+    {
+      "against": "wattson",
+      "playerBP": 20,
+      "opponentBP": 7,
+      "win": false
+    },
+    {
+      "against": "tate and liza",
+      "playerBP": 19,
+      "opponentBP": 8,
+      "win": false
+    },
+    {
+      "against": "flygon",
+      "playerBP": 7.5,
+      "opponentBP": 9,
+      "win": true
+    },
+    {
+      "against": "latios",
+      "playerBP": 16,
+      "opponentBP": 10,
+      "win": true
+    },
+    {
+      "against": "tate and liza",
+      "playerBP": 16,
+      "opponentBP": 8,
+      "win": false
+    },
+    {
+      "against": "tate and liza",
+      "playerBP": 10,
+      "opponentBP": 8,
+      "win": true
+    },
+    {
+      "against": "wattson",
+      "playerBP": 10,
+      "opponentBP": 7,
+      "win": true
+    }
+  ]
+}

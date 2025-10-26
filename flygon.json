@@ -1,0 +1,80 @@
+{
+  "rolls": [
+    2,2,6,1,4,6,1,3,1,2,4,6,2,1,4,4,4,5,7,6,2,0,6,3,1,2,
+    1,6,1,1,2,6,4,4
+  ],
+  "battles": [
+    {
+      "against": "brawly",
+      "playerBP": 5,
+      "opponentBP": 7,
+      "win": false
+    },
+    {
+      "against": "flannery",
+      "playerBP": 16,
+      "opponentBP": 7,
+      "win": true
+    },
+    {
+      "against": "wattson",
+      "playerBP": 6,
+      "opponentBP": 7,
+      "win": false
+    },
+    {
+      "against": "roxanne",
+      "playerBP": 17,
+      "opponentBP": 6,
+      "win": false
+    },
+    {
+      "against": "wattson",
+      "playerBP": 6,
+      "opponentBP": 7,
+      "win": true
+    },
+    {
+      "against": "roxanne",
+      "playerBP": 17,
+      "opponentBP": 6,
+      "win": false
+    },
+    {
+      "against": "tate and liza",
+      "playerBP": 17,
+      "opponentBP": 8,
+      "win": true
+    },
+    {
+      "against": "brawly",
+      "playerBP": 9,
+      "opponentBP": 7,
+      "win": true
+    },
+    {
+      "against": "norman",
+      "playerBP": 13,
+      "opponentBP": 8,
+      "win": true
+    },
+    {
+      "against": "peter",
+      "playerBP": 14,
+      "opponentBP": 7,
+      "win": false
+    },
+    {
+      "against": "roxanne",
+      "playerBP": 18,
+      "opponentBP": 6,
+      "win": true
+    },
+    {
+      "against": "winnona",
+      "playerBP": 18,
+      "opponentBP": 8,
+      "win": true
+    }
+  ]
+}
