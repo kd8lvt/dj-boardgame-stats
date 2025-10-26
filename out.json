@@ -67,9 +67,16 @@
         4
       ],
       "total": 110,
-      "average": 3.235294117647059
+      "average": 3.235294117647059,
+      "streak": 3
     },
     "battles": {
+      "total": {
+        "count": 12,
+        "wins": 7,
+        "losses": 5,
+        "ratio": 0.5833333333333334
+      },
       "brawly": {
         "wins": 1,
         "losses": 1,
@@ -160,9 +167,16 @@
         5
       ],
       "total": 119,
-      "average": 3.5
+      "average": 3.5,
+      "streak": 2
     },
     "battles": {
+      "total": {
+        "count": 17,
+        "wins": 8,
+        "losses": 9,
+        "ratio": 0.47058823529411764
+      },
       "tate and liza": {
         "wins": 1,
         "losses": 0,
@@ -259,9 +273,16 @@
         5
       ],
       "total": 118,
-      "average": 3.4705882352941178
+      "average": 3.4705882352941178,
+      "streak": 4
     },
     "battles": {
+      "total": {
+        "count": 18,
+        "wins": 12,
+        "losses": 6,
+        "ratio": 0.6666666666666666
+      },
       "roxanne": {
         "wins": 2,
         "losses": 0,

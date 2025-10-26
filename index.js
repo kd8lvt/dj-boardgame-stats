@@ -40,9 +40,9 @@ const data = {
 //Set up a structure to hold the output data in
 let output = {
   events: {},
-  flygon: {rolls:{counts:{},all:[],total:0,average:0},battles:{}},
-  kidd: {rolls:{counts:{},all:[],total:0,average:0},battles:{}},
-  peter: {rolls:{counts:{},all:[],total:0,average:0},battles:{}}
+  flygon: {rolls:{counts:{},all:[],total:0,average:0,streak:0},battles:{}},
+  kidd: {rolls:{counts:{},all:[],total:0,average:0,streak:0},battles:{}},
+  peter: {rolls:{counts:{},all:[],total:0,average:0,streak:0},battles:{}}
 };
 
 //Process the data
@@ -58,21 +58,38 @@ for (let type of Object.keys(data)) if (data.hasOwnProperty(type)) {
     let out = output[type]; //Make the code less of a headache to read
 
     out.rolls.all = datum.rolls; //Copy the player's rolls into the output
-
+    let streak = 0;
+    let bestStreak = -1;
+    let streakRoll = -1;
     for (let roll of datum.rolls) { //Loop through the player's rolls
       if (out.rolls.counts[numToWord(roll)] == null) out.rolls.counts[numToWord(roll)]=0; //Make sure the target variable exists
       out.rolls.counts[numToWord(roll)]++ //Increment it by one
       out.rolls.total += roll; //Increment their total by the value of the roll
+      if (streakRoll == roll) streak++;
+      else {
+        streakRoll = roll;
+        if (bestStreak < streak) bestStreak = streak;
+        streak = 1;
+      }
     }
+    out.rolls.streak = bestStreak;
     out.rolls.average = out.rolls.total / out.rolls.all.length; //Calculate the final average.
+    out.battles.total = {count:0,wins:0,losses:0,ratio:-1};
 
     for (let battle of datum.battles) { //Process their battle stats
       if (out.battles[battle.against] == null) out.battles[battle.against] = {wins:0,losses:0,ratio:-1}; //Make sure the target data exists
-      if (battle.win) out.battles[battle.against].wins++; //Increment their wins if they win
-      else out.battles[battle.against].losses++; //Otherwise they (probably) lost
+      out.battles.total.count++;
+      if (battle.win) {
+        out.battles[battle.against].wins++; //Increment their wins if they win
+        out.battles.total.wins++;
+      } else {
+        out.battles[battle.against].losses++; //Otherwise they (probably) lost
+        out.battles.total.losses++;
+      }
 
       let current = out.battles[battle.against]; //Make the next line of code easier to read
       out.battles[battle.against].ratio=current.wins/(current.wins+current.losses); //Calclate their winrate
+      out.battles.total.ratio = out.battles.total.wins/out.battles.total.count //Calculate overall winrate
     }
 
     output[type]=out; //Save to the output structure
