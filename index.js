@@ -65,31 +65,33 @@ for (let type of Object.keys(data)) if (data.hasOwnProperty(type)) {
       if (out.rolls.counts[numToWord(roll)] == null) out.rolls.counts[numToWord(roll)]=0; //Make sure the target variable exists
       out.rolls.counts[numToWord(roll)]++ //Increment it by one
       out.rolls.total += roll; //Increment their total by the value of the roll
-      if (streakRoll == roll) streak++;
-      else {
-        streakRoll = roll;
-        if (bestStreak < streak) bestStreak = streak;
-        streak = 1;
+      if (streakRoll == roll) streak++; //Increment their streak if the roll is the same as the previous
+      else { //If it's not the same as the previous
+        streakRoll = roll; //Set the previous roll to the current (different) roll
+        if (bestStreak < streak) bestStreak = streak; //Update the best streak if the one that just ended is longer
+        streak = 1; //Reset the streak count to one (since we just started a new streak)
       }
     }
-    out.rolls.streak = bestStreak;
+    out.rolls.streak = bestStreak; //Save the best streak to the output
     out.rolls.average = out.rolls.total / out.rolls.all.length; //Calculate the final average.
-    out.battles.total = {count:0,wins:0,losses:0,ratio:-1};
+    out.battles.total = {count:0,wins:0,losses:0,ratio:-1}; //Add a structure for the overall battle stats to the output
 
     for (let battle of datum.battles) { //Process their battle stats
       if (out.battles[battle.against] == null) out.battles[battle.against] = {wins:0,losses:0,ratio:-1}; //Make sure the target data exists
-      out.battles.total.count++;
+      out.battles.total.count++; //Increment their total battle count - this only includes the battles that are recorded in their input stats, not anyone elses'!
       if (battle.win) {
         out.battles[battle.against].wins++; //Increment their wins if they win
         out.battles.total.wins++;
       } else {
-        out.battles[battle.against].losses++; //Otherwise they (probably) lost
+        out.battles[battle.against].losses++; //Otherwise they lost
         out.battles.total.losses++;
       }
 
       let current = out.battles[battle.against]; //Make the next line of code easier to read
-      out.battles[battle.against].ratio=current.wins/(current.wins+current.losses); //Calclate their winrate
-      out.battles.total.ratio = out.battles.total.wins/out.battles.total.count //Calculate overall winrate
+      
+      out.battles[battle.against].ratio=current.wins/(current.wins+current.losses); //Calclate & store their current winrate
+      out.battles.total.ratio = out.battles.total.wins/out.battles.total.count //Calculate & store their current overall winrate
+      //The above is *probably* more efficient if I put it in its own loop, but that's a whole extra loop I'd have to write :P
     }
 
     output[type]=out; //Save to the output structure
