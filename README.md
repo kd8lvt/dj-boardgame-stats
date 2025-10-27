@@ -1,4 +1,4 @@
-For all the stats, see [out.json](https://github.com/kd8lvt/dj-boardgame-stats/blob/main/out.json)  
+For the final processed stats, see [out.json](https://github.com/kd8lvt/dj-boardgame-stats/blob/main/out.json)  
 For the code that calculates everything, see [index.js](https://github.com/kd8lvt/dj-boardgame-stats/blob/main/index.js)  
 
 Each player's input stats were manually recorded by watching the video, and pausing to write them down as they happen. I'm fairly certain they're accurate!  
